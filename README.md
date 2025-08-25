@@ -5,7 +5,7 @@ Cumple los requisitos de la Entrega Nº1: routers separados, CRUD de productos, 
 
 ---
 
-## 🚀 Tecnologías
+## Tecnologías
 
 - **Node.js**
 - **Express**
@@ -14,7 +14,7 @@ Cumple los requisitos de la Entrega Nº1: routers separados, CRUD de productos, 
 
 ---
 
-## 📁 Estructura del proyecto
+## Estructura del proyecto
 
 `````
 .
