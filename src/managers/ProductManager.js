@@ -38,7 +38,7 @@ class ProductManager {
 
     const products = await this.#readFile();
 
-    // code único (buena práctica)
+
     if (products.some(p => p.code === data.code)) {
       throw new Error(`El código "${data.code}" ya existe`);
     }
@@ -67,10 +67,10 @@ class ProductManager {
     const idx = products.findIndex(p => String(p.id) === String(id));
     if (idx === -1) return null;
 
-    // Prohibido cambiar id
+    
     if ('id' in fields) delete fields.id;
 
-    // Si mandan thumbnails y no es array → error útil
+    // thumbnails
     if ('thumbnails' in fields && !Array.isArray(fields.thumbnails)) {
       throw new Error('El campo thumbnails debe ser un array de strings');
     }
@@ -80,7 +80,7 @@ class ProductManager {
       ...fields,
     };
 
-    // Normalizaciones mínimas
+
     if ('price' in fields) updated.price = Number(fields.price);
     if ('status' in fields) updated.status = Boolean(fields.status);
     if ('stock' in fields) updated.stock = Number(fields.stock);

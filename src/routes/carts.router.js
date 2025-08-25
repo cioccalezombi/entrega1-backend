@@ -6,7 +6,7 @@ const router = Router();
 const cm = new CartManager('./data/carts.json');
 const pm = new ProductManager('./data/products.json');
 
-// POST /api/carts/ → Crear carrito
+
 router.post('/', async (req, res) => {
   try {
     const cart = await cm.createCart();
@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// GET /api/carts/:cid → listar productos del carrito
+
 router.get('/:cid', async (req, res) => {
   try {
     const { cid } = req.params;
@@ -28,12 +28,12 @@ router.get('/:cid', async (req, res) => {
   }
 });
 
-// POST /api/carts/:cid/product/:pid → agregar producto (incrementa quantity si ya existe)
+// agregar producto (incrementa quantity si ya existe)
 router.post('/:cid/product/:pid', async (req, res) => {
   try {
     const { cid, pid } = req.params;
 
-    // Verificar que el producto exista
+    // Verificar producto 
     const product = await pm.getProductById(pid);
     if (!product) return res.status(404).json({ status: 'error', message: 'Producto no existe' });
 
