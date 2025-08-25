@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Camiseta",
+    "description": "Camiseta negra",
+    "code": "SKU-001",
+    "price": 3499,
+    "status": true,
+    "stock": 40,
+    "category": "indumentaria",
+    "thumbnails": [
+      "/imgs/camiseta.png",
+      "/imgs/camiseta2.png"
+    ]
+  }
+]
